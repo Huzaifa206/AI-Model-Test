@@ -47,8 +47,14 @@ conf_matrix = confusion_matrix(y_test, y_pred)
 # Display model performance
 st.subheader("Model Evaluation")
 st.write(f'**Accuracy:** {accuracy * 100:.2f}%')
-st.write("**Confusion Matrix:**")
-st.write(conf_matrix)
+st.write("This simple machine learning app predicts whether a person is likely to purchase a product based on their age and salary.")
+st.write("We use a Logistic Regression model, trained on a small sample dataset, to perform binary classification (Yes/No prediction). The model takes numerical inputs, scales them for accuracy, and returns both a prediction and the probability of each outcome.")
+st.write("The app also shows the model's accuracy and confusion matrix, which help evaluate how well the model performs on test data.")
+st.write("🔍 Use the sliders below to input age and salary, and click Predict to see whether the person will likely buy the product — along with the prediction confidence.")
+with st.expander("See Confusion Matrix"):
+    st.write("**Confusion Matrix:**")
+    st.write(conf_matrix)
+
 
 # User input for prediction
 st.subheader("Predict Purchase Based on Age and Salary")
